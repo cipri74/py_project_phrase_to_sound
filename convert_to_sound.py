@@ -1,3 +1,3 @@
 """
-Convert all sentences from file in a directory ierarchy in .mp3 files
+Convert all sentences found in txt files from a directory in .mp3 files
 """
