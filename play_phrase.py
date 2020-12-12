@@ -1,36 +1,37 @@
 """
-GUI to write a sentence and play a speech
+GUI to write a sentence and speech
 """
 
-from tkinter import Tk, Text, Button, CENTER, Label
+import pyttsx3
+from tkinter import Tk, Text, Button, CENTER, Label, END
 
-# root = Tk()
-# root.title("TextToSpeech")
-# root.geometry("600x400")
-# e = Entry(root, justify=CENTER)
-# play_button = Button(root, text="Play sentence", justify=CENTER)
-# e.grid(row=0, column=0)
-# play_button.grid(row=1, column=0)
+# Settings for speech
+engine = pyttsx3.init()
+# RATE
+engine.setProperty('rate', 150)
+# VOICE
+voices = engine.getProperty('voices') 
+engine.setProperty('voice', voices[1].id)
 
 class MainWindow(object):
     def __init__(self, title="TextToSpeech", x = 520, y = 300):
         self.__init_main_window()
 
-        self.label = Label(self.__root, text="Please write a sentence in English (MAX 250 characters): ")
-        self.text_box = Text(self.__root, height=10, width=60, borderwidth=3) # TODO check width?
-        self.play_button = Button(self.__root, text="Play", justify=CENTER)
+        self.label = Label(self.__root, text="Please write a sentence in English.")
+        self.text_box = Text(self.__root, height=10, width=60, borderwidth=3)
+        self.play_button = Button(self.__root, text="Play", justify=CENTER, command=self.get_input_from_text_box)
         self.title = title
         self.size_x = x
         self.size_y = y
 
         self.__design_main_window()
-        self.__add_elements()
+        self.__add_elements_to_window()
         self.__root.mainloop()
-    
+
     def __init_main_window(self):
         self.__root = Tk()
         
-    def __add_elements(self):
+    def __add_elements_to_window(self):
         self.__design_label()
         self.__design_text_box()
         self.__design_play_button()
@@ -48,6 +49,9 @@ class MainWindow(object):
     def __design_label(self):
         self.label.grid(row=0, column=0, pady=5)
         
+    def get_input_from_text_box(self):
+        engine.say(self.text_box.get("1.0", END))
+        engine.runAndWait()
+
 if __name__ == '__main__':
-    # root.mainloop()
     gui = MainWindow()
