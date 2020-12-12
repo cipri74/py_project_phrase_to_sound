@@ -37,6 +37,7 @@ class MainWindow(object):
         self.__design_play_button()
 
     def __design_main_window(self):
+        self.__root.resizable(False, False)
         self.__root.title(self.title)
         self.__root.geometry(f"{self.size_x}x{self.size_y}")
         
