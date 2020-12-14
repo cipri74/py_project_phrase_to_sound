@@ -20,12 +20,12 @@ I. convert_to_sound.py
 ```bash
 convert_to_sound.py <dir1> <dir2>
 ```
-<dir1> 
+dir1
 - input directory with text files or others subdirectories that have text_files/subdirectories and so on;
 - each text file has multiple sentences (0 or more); one sentence/line
-- each sentence from all txt files found in this directory and subdirectories will be converted in audio speech and save in a mp3 files;
+- each sentence from all txt files found in this directory and subdirectories will be converted in audio speech and save in mp3 files;
 
-<dir2> - all mp3 files will be saved in this output directory
+dir2 - all mp3 files will be saved in this output directory
 
 II. play_phrase.py
 - run this script and you see a GUI window with a textbox input for writing all you want; after you write some input text(only in english) click on the button Play and you'll hear the spoken text.
