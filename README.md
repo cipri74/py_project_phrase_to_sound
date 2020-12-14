@@ -14,6 +14,7 @@ Project is created with:
 	
 ## Setup
 You can play with 2 different scripts:
+
 I. convert_to_sound.py
 1. run this script with 2 parameters: 
 ```bash
