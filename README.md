@@ -20,8 +20,7 @@ I. convert_to_sound.py
 ```bash
 convert_to_sound.py <dir1> <dir2>
 ```
-dir1
-- input directory with text files or others subdirectories that have text_files/subdirectories and so on;
+dir1 - input directory with text files or others subdirectories that have text_files/subdirectories and so on;
 - each text file has multiple sentences (0 or more); one sentence/line
 - each sentence from all txt files found in this directory and subdirectories will be converted in audio speech and save in mp3 files;
 
