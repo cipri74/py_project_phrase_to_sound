@@ -29,6 +29,6 @@ dir2 - all mp3 files will be saved in this output directory
 
 II. play_phrase.py
 ```bash
-play_phrase.py <dir1> <dir2>
+play_phrase.py
 ```
 - run this script and you see a GUI window with a textbox input for writing all you want; after you write some input text(only in english) click on the button Play and you'll hear the spoken text.
